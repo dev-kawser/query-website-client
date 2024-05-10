@@ -1,7 +1,72 @@
-import { Link } from "react-router-dom";
+import { useContext, useEffect, useState } from "react";
+import { useForm } from "react-hook-form";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+import { AuthContext } from "../../Context/ContextProvider";
 
 
 const Login = () => {
+
+
+    const location = useLocation()
+    const navigate = useNavigate()
+
+    const { loginUser, googleUser, user } = useContext(AuthContext)
+    const [error, setError] = useState("")
+
+
+    const {
+        register,
+        handleSubmit,
+        formState: { errors },
+    } = useForm()
+
+
+
+    const googleHandle = () => {
+        googleUser()
+            .then(() => {
+                toast.success("Successfully Google Login !")
+                navigate(location?.state ? location.state : "/")
+            })
+            .catch(() => {
+                toast.warn("User not found. Please check your password")
+            })
+    }
+
+
+
+    const onSubmit = (data) => {
+
+        setError("")
+
+        const email = data.email
+        const password = data.password
+
+        const regex = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
+        if (!regex.test(data.password)) {
+            setError("Password should be one Upper case, one lower case, and at least 6 characters")
+            return;
+        }
+
+        loginUser(email, password)
+            .then(() => {
+                toast.success("Successfully Login !")
+                navigate(location?.state ? location.state : "/")
+            })
+            .catch(() => {
+                toast.warn("User not found. Please check your password")
+            })
+    }
+
+    useEffect(() => {
+        if (user) {
+            navigate(location.state)
+        }
+    }, [location.state, navigate, user])
+
+
+
     return (
         <div>
             <div className="flex h-screen items-center justify-center bg-[#8EA7E9]/20 p-6 md:p-0">
@@ -20,11 +85,18 @@ const Login = () => {
                     {/* input side  */}
                     <div className="flex w-full flex-col justify-center bg-white py-10 lg:w-[60%]">
                         <h2 className="pb-8 text-center text-3xl font-bold text-[#8EA7E9]">Login Here</h2>
-                        <form className="flex  w-full flex-col items-center justify-center gap-4">
-                            <input className="w-[80%] rounded-lg border border-[#8EA7E9] px-6 py-2 focus:outline-none focus:ring-2 focus:ring-[#8EA7E9]/50 md:w-[60%]" type="email" placeholder="Email" name="email" />
-                            <input className="w-[80%] rounded-lg border border-[#8EA7E9] px-6 py-2 focus:outline-none focus:ring-2 focus:ring-[#8EA7E9]/50 md:w-[60%]" type="password" placeholder="Password" name="password" />
+                        <form onSubmit={handleSubmit(onSubmit)} className="flex  w-full flex-col items-center justify-center gap-4">
+                            <input className="w-[80%] rounded-lg border border-[#8EA7E9] px-6 py-2 focus:outline-none focus:ring-2 focus:ring-[#8EA7E9]/50 md:w-[60%]" type="email" placeholder="Email" name="email" {...register("email", { required: true })} />
+                            {errors.email && <small className="text-red-500 font-medium mt-1">This field is required</small>}
+                            <input className="w-[80%] rounded-lg border border-[#8EA7E9] px-6 py-2 focus:outline-none focus:ring-2 focus:ring-[#8EA7E9]/50 md:w-[60%]" type="password" placeholder="Password" name="password" {...register("password", { required: true })} />
+                            {errors.password && <small className="text-red-500 font-medium mt-1">This field is required</small>}
+                            <div>
+                                {
+                                    error && <small className="text-red-500 font-medium mt-1">{error}</small>
+                                }
+                            </div>
                             <p className="text-[14px] text-gray-400">Do not have an account ? <Link
-                            to="/register" className="text-[#8EA7E9] ">Create one</Link></p>
+                                to="/register" className="text-[#8EA7E9] ">Create one</Link></p>
                             <input className="w-[80%] rounded-lg bg-[#8EA7E9] px-6 py-2 font-medium text-white md:w-[60%]" type="submit" />
                         </form>
                         {/* divider  */}
@@ -34,7 +106,7 @@ const Login = () => {
                             <hr className="flex-1" />
                         </div>
                         {/* sign with google */}
-                        <div className="mx-auto flex h-[50px] w-[200px] items-center overflow-hidden rounded-full shadow-md duration-300 hover:scale-95 hover:shadow">
+                        <div onClick={googleHandle} className="mx-auto flex h-[50px] w-[200px] items-center overflow-hidden rounded-full shadow-md duration-300 hover:scale-95 hover:shadow">
                             <div className="flex h-full w-[50%] items-center bg-[#8EA7E9] pl-4 text-sm text-white">Sign With</div>
                             <span className="right-0 top-0 h-0 w-0 -rotate-90 border-b-[50px] border-r-[50px] border-b-transparent border-r-[#8EA7E9] group-hover:hidden"></span>
                             <span className="pr-4 text-4xl font-bold text-[#8EA7E9]">G+</span>

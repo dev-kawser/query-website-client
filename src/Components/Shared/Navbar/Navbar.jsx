@@ -1,7 +1,11 @@
+import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../../../Context/ContextProvider";
 
 
 const Navbar = () => {
+
+    const { user, LogOut } = useContext(AuthContext)
 
     const links =
         <>
@@ -45,11 +49,19 @@ const Navbar = () => {
                 </div>
                 <div className="navbar-end">
 
-                    <Link to="/login">
+                    {
+                        user ?
+                            <Link>
 
-                        <button className="group relative rounded z-10 h-12 w-28 overflow-hidden bg-black text-xl font-semibold text-white"><span className="absolute -inset-8 origin-left rotate-12 scale-x-0 transform bg-white transition-transform duration-700 group-hover:scale-x-100 group-hover:duration-300"></span><span className="absolute -inset-8 origin-left rotate-12 scale-x-0 transform bg-sky-700 transition-transform duration-500 group-hover:scale-x-100 group-hover:duration-700"></span><span className="absolute -inset-8 origin-left rotate-12 scale-x-0 transform bg-sky-900 transition-transform duration-300 group-hover:scale-x-50 group-hover:duration-500"></span><span className="absolute z-10 text-center text-white opacity-0 duration-100 ease-out group-hover:opacity-100 group-hover:duration-700">Click</span>Login</button>
+                                <button onClick={() => LogOut()} className="group relative rounded z-10 h-12 w-28 overflow-hidden bg-black text-xl font-semibold text-white"><span className="absolute -inset-8 origin-left rotate-12 scale-x-0 transform bg-white transition-transform duration-700 group-hover:scale-x-100 group-hover:duration-300"></span><span className="absolute -inset-8 origin-left rotate-12 scale-x-0 transform bg-sky-700 transition-transform duration-500 group-hover:scale-x-100 group-hover:duration-700"></span><span className="absolute -inset-8 origin-left rotate-12 scale-x-0 transform bg-sky-900 transition-transform duration-300 group-hover:scale-x-50 group-hover:duration-500"></span><span className="absolute z-10 text-center text-white opacity-0 duration-100 ease-out group-hover:opacity-100 group-hover:duration-700">Click</span>Logout</button>
 
-                    </Link>
+                            </Link> :
+                            <Link to="/login">
+
+                                <button className="group relative rounded z-10 h-12 w-28 overflow-hidden bg-black text-xl font-semibold text-white"><span className="absolute -inset-8 origin-left rotate-12 scale-x-0 transform bg-white transition-transform duration-700 group-hover:scale-x-100 group-hover:duration-300"></span><span className="absolute -inset-8 origin-left rotate-12 scale-x-0 transform bg-sky-700 transition-transform duration-500 group-hover:scale-x-100 group-hover:duration-700"></span><span className="absolute -inset-8 origin-left rotate-12 scale-x-0 transform bg-sky-900 transition-transform duration-300 group-hover:scale-x-50 group-hover:duration-500"></span><span className="absolute z-10 text-center text-white opacity-0 duration-100 ease-out group-hover:opacity-100 group-hover:duration-700">Click</span>Login</button>
+
+                            </Link>
+                    }
 
 
                 </div>
