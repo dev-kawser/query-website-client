@@ -36,7 +36,19 @@ const AddQueries = () => {
             userInfo: userInfo
         }
 
-        console.log(addQueryInfo);
+
+        // data added to server
+        fetch('http://localhost:5000/add-query', {
+            method: "POST",
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(addQueryInfo)
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data);
+        })
     }
 
 
