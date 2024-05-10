@@ -39,7 +39,7 @@ const Navbar = () => {
                         </ul>
                     </div>
                     <div className="flex gap-2 items-center justify-center">
-                        <img className="size-10 lg:size-12" src="https://i.ibb.co/XYyrSVm/logo.png" alt="" />
+                        <img className="size-10 lg:size-12 rounded-full" src="https://i.ibb.co/ykcZXtz/sara-kurfess-6lc-T2k-RPvn-I-unsplash.jpg" alt="" />
                         <Link to="/" className="lg:text-2xl text-sm font-bold">Smart Tech Spot</Link>
                     </div>
                 </div>

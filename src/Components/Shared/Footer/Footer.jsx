@@ -6,7 +6,7 @@ const Footer = () => {
                 <div className="lg:w-1/3">
                     <a rel="noopener noreferrer" href="#" className="flex justify-center space-x-3 lg:justify-start">
                         <div className="flex items-center justify-center w-12 h-12 rounded-full dark:bg-violet-600">
-                        <img className="size-12" src="https://i.ibb.co/XYyrSVm/logo.png" alt="" />
+                        <img className="size-12" src="https://i.ibb.co/ykcZXtz/sara-kurfess-6lc-T2k-RPvn-I-unsplash.jpg" alt="" />
                         </div>
                         <span className="self-center text-xl font-semibold">Smart Tech Spot</span>
                     </a>
