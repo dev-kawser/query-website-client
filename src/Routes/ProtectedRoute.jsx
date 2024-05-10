@@ -1,8 +1,8 @@
 /* eslint-disable react/prop-types */
 import { useContext } from "react";
 import { Navigate, useLocation } from "react-router-dom";
-// import Lottie from "lottie-react";
-// import animation from '../../assets/animation.json'
+import Lottie from "lottie-react";
+import loadingAnimation from "../assets/loading.json"
 import { AuthContext } from "../Context/ContextProvider";
 
 
@@ -12,8 +12,7 @@ const ProtectedRoute = ({ children }) => {
 
     if (loading) {
         return <div className="flex lg:h-[500px] justify-center items-center lg:mt-20 mx-auto">
-            {/* <Lottie animationData={animation}></Lottie> */}
-            <p>loading.............................................</p>
+            <Lottie animationData={loadingAnimation} ></Lottie>
         </div>
     }
 

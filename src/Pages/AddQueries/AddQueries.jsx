@@ -36,7 +36,7 @@ const AddQueries = () => {
             userInfo: userInfo
         }
 
-        
+        console.log(addQueryInfo);
     }
 
 
