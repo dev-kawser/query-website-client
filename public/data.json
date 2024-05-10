@@ -1,0 +1,162 @@
+[
+    {
+        "Product_Image": "https://example.com/image1.jpg",
+        "Query_Title": "Best Budget Smartphone Under $300",
+        "Product_Name": "Samsung Galaxy A32",
+        "Brand_Name": "Samsung",
+        "Alternation_Reason": "Excellent camera quality for the price point, long battery life, and vibrant display.",
+        "Date_Posted": "2024-05-10"
+    },
+    {
+        "Product_Image": "https://example.com/image2.jpg",
+        "Query_Title": "Flagship Performance at Affordable Price",
+        "Product_Name": "Xiaomi Redmi Note 11 Pro",
+        "Brand_Name": "Xiaomi",
+        "Alternation_Reason": "Powerful processor, impressive camera setup, and fast charging capability.",
+        "Date_Posted": "2024-05-09"
+    },
+    {
+        "Product_Image": "https://example.com/image3.jpg",
+        "Query_Title": "Sleek Design with Premium Features",
+        "Product_Name": "OnePlus 10",
+        "Brand_Name": "OnePlus",
+        "Alternation_Reason": "Premium build quality, smooth performance, and OxygenOS experience.",
+        "Date_Posted": "2024-05-08"
+    },
+    {
+        "Product_Image": "https://example.com/image4.jpg",
+        "Query_Title": "Best Camera Phone for Photography Enthusiasts",
+        "Product_Name": "Google Pixel 6 Pro",
+        "Brand_Name": "Google",
+        "Alternation_Reason": "Outstanding camera capabilities with advanced AI features, excellent software support, and timely updates.",
+        "Date_Posted": "2024-05-07"
+    },
+    {
+        "Product_Image": "https://example.com/image5.jpg",
+        "Query_Title": "Affordable Gaming Smartphone with High Refresh Rate Display",
+        "Product_Name": "Realme GT Neo 3",
+        "Brand_Name": "Realme",
+        "Alternation_Reason": "Smooth gaming experience, high refresh rate display, and powerful chipset at an affordable price.",
+        "Date_Posted": "2024-05-06"
+    },
+    {
+        "Product_Image": "https://example.com/image6.jpg",
+        "Query_Title": "Compact Flagship Smartphone with Impressive Battery Life",
+        "Product_Name": "iPhone 14 Mini",
+        "Brand_Name": "Apple",
+        "Alternation_Reason": "Compact form factor, excellent battery life, and top-notch performance.",
+        "Date_Posted": "2024-05-05"
+    },
+    {
+        "Product_Image": "https://example.com/image7.jpg",
+        "Query_Title": "Best Mid-range 5G Smartphone",
+        "Product_Name": "Samsung Galaxy A52 5G",
+        "Brand_Name": "Samsung",
+        "Alternation_Reason": "5G connectivity, versatile camera setup, and AMOLED display.",
+        "Date_Posted": "2024-05-04"
+    },
+    {
+        "Product_Image": "https://example.com/image8.jpg",
+        "Query_Title": "Top Performance Flagship with Versatile Camera System",
+        "Product_Name": "Huawei P50 Pro",
+        "Brand_Name": "Huawei",
+        "Alternation_Reason": "Powerful performance, innovative camera technology, and elegant design.",
+        "Date_Posted": "2024-05-03"
+    },
+    {
+        "Product_Image": "https://example.com/image9.jpg",
+        "Query_Title": "Best Battery Life Smartphone for Heavy Users",
+        "Product_Name": "Oppo Find X5 Pro",
+        "Brand_Name": "Oppo",
+        "Alternation_Reason": "Long-lasting battery life, fast charging capability, and premium design.",
+        "Date_Posted": "2024-05-02"
+    },
+    {
+        "Product_Image": "https://example.com/image10.jpg",
+        "Query_Title": "Compact and Affordable 5G Smartphone",
+        "Product_Name": "Google Pixel 5a 5G",
+        "Brand_Name": "Google",
+        "Alternation_Reason": "Compact size, 5G connectivity, and clean Android experience.",
+        "Date_Posted": "2024-05-01"
+    },
+    {
+        "Product_Image": "https://example.com/image11.jpg",
+        "Query_Title": "Best Value-for-Money Mid-range Smartphone",
+        "Product_Name": "Xiaomi Mi 11 Lite",
+        "Brand_Name": "Xiaomi",
+        "Alternation_Reason": "Sleek design, vibrant display, and competitive pricing.",
+        "Date_Posted": "2024-04-30"
+    },
+    {
+        "Product_Image": "https://example.com/image12.jpg",
+        "Query_Title": "Best Smartphone for Mobile Photography Enthusiasts",
+        "Product_Name": "Sony Xperia 1 IV",
+        "Brand_Name": "Sony",
+        "Alternation_Reason": "Professional-grade camera system, 4K HDR OLED display, and premium build quality.",
+        "Date_Posted": "2024-04-29"
+    },
+    {
+        "Product_Image": "https://example.com/image13.jpg",
+        "Query_Title": "Best Budget 5G Smartphone",
+        "Product_Name": "Motorola Moto G Stylus 5G",
+        "Brand_Name": "Motorola",
+        "Alternation_Reason": "5G connectivity, stylus support, and affordable price tag.",
+        "Date_Posted": "2024-04-28"
+    },
+    {
+        "Product_Image": "https://example.com/image14.jpg",
+        "Query_Title": "Flagship Killer with Premium Features",
+        "Product_Name": "OnePlus 11",
+        "Brand_Name": "OnePlus",
+        "Alternation_Reason": "High-end specifications, smooth OxygenOS, and competitive pricing.",
+        "Date_Posted": "2024-04-27"
+    },
+    {
+        "Product_Image": "https://example.com/image15.jpg",
+        "Query_Title": "Best Camera Phone for Low Light Photography",
+        "Product_Name": "Samsung Galaxy S22 Ultra",
+        "Brand_Name": "Samsung",
+        "Alternation_Reason": "Advanced camera system with improved low-light performance, S Pen support, and 5G connectivity.",
+        "Date_Posted": "2024-04-26"
+    },
+    {
+        "Product_Image": "https://example.com/image16.jpg",
+        "Query_Title": "Ultra-premium Flagship Smartphone",
+        "Product_Name": "iPhone 15 Pro Max",
+        "Brand_Name": "Apple",
+        "Alternation_Reason": "Cutting-edge technology, unparalleled performance, and premium design.",
+        "Date_Posted": "2024-04-25"
+    },
+    {
+        "Product_Image": "https://example.com/image17.jpg",
+        "Query_Title": "Best Smartphone for Gaming Performance",
+        "Product_Name": "Asus ROG Phone 6",
+        "Brand_Name": "Asus",
+        "Alternation_Reason": "Dedicated gaming features, high-refresh-rate display, and advanced cooling system.",
+        "Date_Posted": "2024-04-24"
+    },
+    {
+        "Product_Image": "https://example.com/image18.jpg",
+        "Query_Title": "Compact Flagship Smartphone",
+        "Product_Name": "Sony Xperia 5 III",
+        "Brand_Name": "Sony",
+        "Alternation_Reason": "Compact design, powerful performance, and versatile camera system.",
+        "Date_Posted": "2024-04-23"
+    },
+    {
+        "Product_Image": "https://example.com/image19.jpg",
+        "Query_Title": "Best Affordable Smartphone with Premium Features",
+        "Product_Name": "OnePlus Nord 2",
+        "Brand_Name": "OnePlus",
+        "Alternation_Reason": "Premium design, smooth performance, and excellent camera capabilities.",
+        "Date_Posted": "2024-04-22"
+    },
+    {
+        "Product_Image": "https://example.com/image20.jpg",
+        "Query_Title": "Best Mid-range Smartphone with 5G Connectivity",
+        "Product_Name": "Motorola Edge 30",
+        "Brand_Name": "Motorola",
+        "Alternation_Reason": "5G connectivity, sleek design, and impressive battery life.",
+        "Date_Posted": "2024-04-21"
+    }
+]

@@ -97,7 +97,7 @@ const Login = () => {
                             </div>
                             <p className="text-[14px] text-gray-400">Do not have an account ? <Link
                                 to="/register" className="text-[#8EA7E9] ">Create one</Link></p>
-                            <input className="w-[80%] rounded-lg bg-[#8EA7E9] px-6 py-2 font-medium text-white md:w-[60%]" type="submit" />
+                            <input className="w-[80%] rounded-lg bg-[#8EA7E9] px-6 py-2 font-medium text-white md:w-[60%]" value="Login" type="submit" />
                         </form>
                         {/* divider  */}
                         <div className="my-8 flex items-center px-8">
