@@ -8,9 +8,9 @@ const Slider = () => {
     const nextSlider = () => setCurrentSlider((currentSlider) => currentSlider === sliders.length - 1 ? 0 : currentSlider + 1);
     const isSmallScreen = window.innerWidth <= 768;
     return (
-        <div className="container mx-auto mt-10">
+        <div className="container lg:mx-auto px-2 mt-10">
 
-            <div className="w-full h-60 sm:h-96 md:h-[540px] flex flex-col xl:flex-row items-center justify-center gap-5 lg:gap-10 relative bg-cover before:absolute before:bg-black/50 before:inset-0 transform duration-1000 ease-linear z-50 overflow-hidden"
+            <div className="w-full h-60 sm:h-96 md:h-[600px] flex flex-col xl:flex-row items-center justify-center gap-5 lg:gap-10 relative bg-cover before:absolute before:bg-black/50 before:inset-0 transform duration-1000 ease-linear z-50 overflow-hidden"
                 style={{ backgroundImage: `url(${currentSlider === 0 ? sliders[sliders.length - 1].img : sliders[currentSlider - 1].img})` }}>
                 {/* arrow */}
                 <div className="absolute bottom-1/4 flex gap-3 z-50 px-5">
