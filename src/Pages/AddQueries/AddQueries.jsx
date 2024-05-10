@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { AuthContext } from "../../Context/ContextProvider";
+import { toast } from "react-toastify";
 
 
 const AddQueries = () => {
@@ -45,10 +46,11 @@ const AddQueries = () => {
             },
             body: JSON.stringify(addQueryInfo)
         })
-        .then(res => res.json())
-        .then(data => {
-            console.log(data);
-        })
+            .then(res => res.json())
+            .then(() => {
+                form.reset()
+                toast.success("Query Added Successfully")
+            })
     }
 
 

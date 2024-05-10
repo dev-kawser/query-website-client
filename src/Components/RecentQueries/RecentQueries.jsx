@@ -17,10 +17,10 @@ const RecentQueries = () => {
     }, [])
 
     return (
-        <div className="mt-20">
+        <div className="my-20">
             <h2 className="text-5xl font-bold text-center dark:text-gray-700">Recent Queries</h2>
 
-            <div className="grid grid-cols-1 lg:grid-cols-2 p-1 container mx-auto mt-10 gap-5">
+            <div className="grid grid-cols-1 lg:grid-cols-3 p-1 container mx-auto mt-10 gap-12">
                 {
                     slicedRecentQueries.map((data) => <RecentQueriesCard data={data} key={data._id} ></RecentQueriesCard> )
                 }
