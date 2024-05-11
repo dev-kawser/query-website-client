@@ -11,8 +11,8 @@ const Slide = () => {
     }, [currentSlider, sliders.length]);
 
     return (
-        <div className="container rounded-xl lg:mx-auto px-2 mt-10">
-            <div className="w-full rounded-xl h-60 sm:h-96 md:h-[540px] flex flex-col items-center justify-center gap-5 lg:gap-10 bg-cover bg-center before:absolute before:bg-black/50 before:inset-0 transform duration-1000 ease-linear"
+        <div className="container lg:mx-auto px-2 mt-10">
+            <div className="w-ful h-60 sm:h-96 md:h-[540px] flex flex-col items-center justify-center gap-5 lg:gap-10 bg-cover bg-center before:absolute before:bg-black/50 before:inset-0 transform duration-1000 ease-linear"
                 style={{ backgroundImage: `url(${sliders[currentSlider].img})` }}>
                 {/* text container here */}
                 <div className="drop-shadow-lg text-white text-center px-5">

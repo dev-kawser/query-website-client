@@ -49,7 +49,8 @@ const router = createBrowserRouter([
 
             {
                 path: "/all-queries",
-                element: <AllQueries></AllQueries>
+                element: <AllQueries></AllQueries>,
+                loader: () => fetch('http://localhost:5000/recent-queries')
             },
 
             {
