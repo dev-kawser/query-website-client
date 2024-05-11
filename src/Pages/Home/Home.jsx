@@ -1,12 +1,13 @@
 import RecentQueries from "../../Components/RecentQueries/RecentQueries";
-import Slider from "../../Components/Slider/Slider";
+import Slide from "../../Components/Slider/Slide";
+
 import TinnyBanner from "../../Components/TinnyBanner/TinnyBanner";
 
 
 const Home = () => {
     return (
         <div>
-            <Slider></Slider>
+            <Slide></Slide>
             <TinnyBanner></TinnyBanner>
             <RecentQueries></RecentQueries>
         </div>
