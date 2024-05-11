@@ -1,7 +1,24 @@
+import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../Context/ContextProvider";
+import MyQueriesCard from "./MyQueriesCard";
 
 
 const MyQueries = () => {
+
+    const { user } = useContext(AuthContext);
+    const [myQueries, setMyQueries] = useState([]);
+
+    useEffect(() => {
+        fetch(`http://localhost:5000/myQueries/${user?.email}`)
+            .then(res => res.json())
+            .then(data => {
+                setMyQueries(data);
+            });
+    }, [user]);
+
+
+
     return (
         <div>
             <div>
@@ -17,8 +34,10 @@ const MyQueries = () => {
                     </div>
                 </div >
             </div>
-            <div>
-
+            <div className="grid grid-cols-1 lg:grid-cols-3 p-1 container mx-auto my-10 gap-12">
+                {
+                    myQueries.map((data) => <MyQueriesCard myQueries={myQueries} setMyQueries={setMyQueries} data={data} key={data._id} ></MyQueriesCard>)
+                }
             </div>
         </div>
     );
