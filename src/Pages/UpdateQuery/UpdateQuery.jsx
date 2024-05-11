@@ -1,5 +1,6 @@
 
 import { useLoaderData } from "react-router-dom";
+import Swal from "sweetalert2";
 // import { toast } from "react-toastify";
 
 
@@ -7,7 +8,7 @@ import { useLoaderData } from "react-router-dom";
 const UpdateQuery = () => {
 
     const updateQuery = useLoaderData()
-    const { productName, brandName, queryTitle, productPhoto, boycottDetails, } = updateQuery;
+    const { productName, _id, brandName, queryTitle, productPhoto, boycottDetails, } = updateQuery;
 
 
     const handleUpdateQuery = e => {
@@ -28,6 +29,26 @@ const UpdateQuery = () => {
             boycottDetails: boycottDetails,
             date: date,
         }
+
+        fetch(`http://localhost:5000/recent-queries/${_id}`, {
+            method: "PUT",
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(updateQueryInfo)
+
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.modifiedCount > 0) {
+                    Swal.fire({
+                        title: 'Success!',
+                        text: 'Query Updated Successfully',
+                        icon: 'success',
+                        confirmButtonText: 'Next'
+                    })
+                }
+            })
 
 
 
