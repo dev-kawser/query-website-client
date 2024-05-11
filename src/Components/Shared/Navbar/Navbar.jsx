@@ -3,6 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../../Context/ContextProvider";
 
 
+
 const Navbar = () => {
 
     const { user, LogOut } = useContext(AuthContext)
@@ -18,9 +19,21 @@ const Navbar = () => {
             <li className="group flex  cursor-pointer flex-col">
                 <NavLink className={({ isActive }) => isActive ? 'text-sky-500 font-semibold ' : 'font-semibold hover:scale-105'} to='/my-queries' > My Queries </NavLink> <span className="hidden lg:block mt-[2px] h-[3px] w-[0px] rounded-full bg-sky-500 transition-all duration-300 group-hover:w-full"></span>
             </li>
-            <li className="group flex  cursor-pointer flex-col">
-                <NavLink className={({ isActive }) => isActive ? 'text-sky-500 font-semibold ' : 'font-semibold hover:scale-105'} to='/add-queries' > Add Queries </NavLink> <span className="hidden lg:block mt-[2px] h-[3px] w-[0px] rounded-full bg-sky-500 transition-all duration-300 group-hover:w-full"></span>
-            </li>
+            {
+                user ?
+                    <>
+                        <li className="group flex  cursor-pointer flex-col">
+                            <NavLink className={({ isActive }) => isActive ? 'text-sky-500 font-semibold ' : 'font-semibold hover:scale-105'} to='/recommendation-for-me' > Recommendations For Me
+                            </NavLink> <span className="hidden lg:block mt-[2px] h-[3px] w-[0px] rounded-full bg-sky-500 transition-all duration-300 group-hover:w-full"></span>
+                        </li>
+                        <li className="group flex  cursor-pointer flex-col">
+                            <NavLink className={({ isActive }) => isActive ? 'text-sky-500 font-semibold ' : 'font-semibold hover:scale-105'} to='/my-recommendations' > My recommendations
+                            </NavLink> <span className="hidden lg:block mt-[2px] h-[3px] w-[0px] rounded-full bg-sky-500 transition-all duration-300 group-hover:w-full"></span>
+                        </li>
+                    </>
+
+                    : ""
+            }
         </>
 
 
@@ -39,8 +52,8 @@ const Navbar = () => {
                         </ul>
                     </div>
                     <div className="flex gap-2 items-center justify-center">
-                        <img className="size-10 lg:size-12 rounded-full" src="https://i.ibb.co/ykcZXtz/sara-kurfess-6lc-T2k-RPvn-I-unsplash.jpg" alt="" />
-                        <Link to="/" className="lg:text-2xl text-sm font-bold">Smart Tech Spot</Link>
+                        <img className="size-10 lg:flex hidden lg:size-12 lg:rounded-full" src="https://i.ibb.co/ykcZXtz/sara-kurfess-6lc-T2k-RPvn-I-unsplash.jpg" alt="" />
+                        <Link to="/" className="lg:text-2xl text-base font-bold">Smart Tech Spot</Link>
                     </div>
                 </div>
                 <div className="navbar-center hidden lg:flex">
@@ -50,15 +63,13 @@ const Navbar = () => {
                         }
                     </ul>
                 </div>
-                <div className="navbar-end">
+                <div className="navbar-end z-50 ">
 
                     {
                         user ?
-                            <Link>
+                            <button onClick={() => LogOut()} className="group relative rounded z-10 h-12 w-28 overflow-hidden bg-black text-xl font-semibold text-white"><span className="absolute -inset-8 origin-left rotate-12 scale-x-0 transform bg-white transition-transform duration-700 group-hover:scale-x-100 group-hover:duration-300"></span><span className="absolute -inset-8 origin-left rotate-12 scale-x-0 transform bg-sky-700 transition-transform duration-500 group-hover:scale-x-100 group-hover:duration-700"></span><span className="absolute -inset-8 origin-left rotate-12 scale-x-0 transform bg-sky-900 transition-transform duration-300 group-hover:scale-x-50 group-hover:duration-500"></span><span className="absolute z-10 text-center text-white opacity-0 duration-100 ease-out group-hover:opacity-100 group-hover:duration-700">Click</span>Logout</button>
 
-                                <button onClick={() => LogOut()} className="group relative rounded z-10 h-12 w-28 overflow-hidden bg-black text-xl font-semibold text-white"><span className="absolute -inset-8 origin-left rotate-12 scale-x-0 transform bg-white transition-transform duration-700 group-hover:scale-x-100 group-hover:duration-300"></span><span className="absolute -inset-8 origin-left rotate-12 scale-x-0 transform bg-sky-700 transition-transform duration-500 group-hover:scale-x-100 group-hover:duration-700"></span><span className="absolute -inset-8 origin-left rotate-12 scale-x-0 transform bg-sky-900 transition-transform duration-300 group-hover:scale-x-50 group-hover:duration-500"></span><span className="absolute z-10 text-center text-white opacity-0 duration-100 ease-out group-hover:opacity-100 group-hover:duration-700">Click</span>Logout</button>
-
-                            </Link> :
+                            :
                             <Link to="/login">
 
                                 <button className="group relative rounded z-10 h-12 w-28 overflow-hidden bg-black text-xl font-semibold text-white"><span className="absolute -inset-8 origin-left rotate-12 scale-x-0 transform bg-white transition-transform duration-700 group-hover:scale-x-100 group-hover:duration-300"></span><span className="absolute -inset-8 origin-left rotate-12 scale-x-0 transform bg-sky-700 transition-transform duration-500 group-hover:scale-x-100 group-hover:duration-700"></span><span className="absolute -inset-8 origin-left rotate-12 scale-x-0 transform bg-sky-900 transition-transform duration-300 group-hover:scale-x-50 group-hover:duration-500"></span><span className="absolute z-10 text-center text-white opacity-0 duration-100 ease-out group-hover:opacity-100 group-hover:duration-700">Click</span>Login</button>
