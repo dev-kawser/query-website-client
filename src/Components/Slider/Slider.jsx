@@ -3,15 +3,15 @@ import { useState } from "react";
 
 const Slider = () => {
     const [currentSlider, setCurrentSlider] = useState(0);
-    const sliders = [{ img: "https://source.unsplash.com/1200x540/?nature", title: "Escape 1", des: "A Symphony of Tranquility. Experience the perfect blend of relaxation and excitement." }, { img: "https://source.unsplash.com/1200x540/?hill", title: "Escape 2", des: "A Symphony of Tranquility. Experience the perfect blend of relaxation and excitement." }, { img: "https://source.unsplash.com/1200x540/?mountain", title: "Escape 3", des: "A Symphony of Tranquility. Experience the perfect blend of relaxation and excitement." }, { img: "https://source.unsplash.com/1200x540/?river", title: "Escape 4", des: "A Symphony of Tranquility. Experience the perfect blend of relaxation and excitement." }, { img: "https://source.unsplash.com/1200x540/?sea", title: "Escape 5", des: "A Symphony of Tranquility. Experience the perfect blend of relaxation and excitement." },];
+    const sliders = [{ img: "https://i.ibb.co/8g23ZCg/akhil-yerabati-4-Ym-SIWff6aw-unsplash.jpg", title: "Iphone 12", des: "Unveiling the Marvel: The iPhone 12's Compelling Features" }, { img: "https://i.ibb.co/bJLqzwg/dhruv-vishwakarma-Eda49v-VHnp0-unsplash.jpg", title: "Samsung s22 ultra", des: "Unleashing Power: The Samsung S22 Ultra's Game-Changing Innovations" }, { img: "https://i.ibb.co/80FWbv0/adrien-K12-Srka-Zu-Cg-unsplash.jpg", title: "Google Pixel 5", des: "Unlocking Potential: The Google Pixel 5's Impressive Features" }, { img: "https://i.ibb.co/5jf5TwF/techietech-tech-J3-a1qdhvwg-unsplash.jpg", title: "OnePlus 9 Pro", des: "Elevating Excellence: The OnePlus 9 Pro's Remarkable Advancements" }, { img: "https://i.ibb.co/8g23ZCg/akhil-yerabati-4-Ym-SIWff6aw-unsplash.jpg", title: "Xiaomi Mi 11", des: "Revolutionizing Tech: The Xiaomi Mi 11's Breakthrough Features" },];
     const prevSlider = () => setCurrentSlider((currentSlider) => currentSlider === 0 ? sliders.length - 1 : currentSlider - 1);
     const nextSlider = () => setCurrentSlider((currentSlider) => currentSlider === sliders.length - 1 ? 0 : currentSlider + 1);
     const isSmallScreen = window.innerWidth <= 768;
     return (
-        <div className="container lg:mx-auto px-2 mt-10">
+        <div className="container rounded-xl lg:mx-auto px-2 mt-10">
 
-            <div className="w-full h-60 sm:h-96 md:h-[600px] flex flex-col xl:flex-row items-center justify-center gap-5 lg:gap-10 relative bg-cover before:absolute before:bg-black/50 before:inset-0 transform duration-1000 ease-linear z-50 overflow-hidden"
-                style={{ backgroundImage: `url(${currentSlider === 0 ? sliders[sliders.length - 1].img : sliders[currentSlider - 1].img})` }}>
+            <div className="w-full rounded-xl h-60 sm:h-96 md:h-[600px] flex flex-col xl:flex-row items-center justify-center gap-5 lg:gap-10 relative bg-cover before:absolute before:bg-black/50 before:inset-0 transform duration-1000 ease-linear z-50 overflow-hidden"
+                style={{ backgroundImage: `url(${currentSlider === 0 ? sliders[sliders.length - 1].img : sliders[currentSlider].img})` }}>
                 {/* arrow */}
                 <div className="absolute bottom-1/4 flex gap-3 z-50 px-5">
                     {/* arrow left */}
@@ -25,17 +25,17 @@ const Slider = () => {
                 </div>
                 {/* text container here */}
                 <div className="w-1/2 px-4 left-0 absolute drop-shadow-lg text-white rounded-lg">
-                    <h1 className="lg:text-3xl mb-3">{sliders[currentSlider].title}</h1>
+                    <h1 className="lg:text-4xl font-semibold mb-3">{sliders[currentSlider].title}</h1>
                     <p className="text-xs sm:text-sm md:text-base lg:text-lg">{sliders[currentSlider].des}</p>
                 </div>
                 {/* slider container */}
-                <div className="w-1/2 ml-auto overflow-hidden  absolute -right-5 lg:-right-16 z-50 px-4 py-10">
+                <div className="w-1/2 ml-auto overflow-hidden absolute -right-5 lg:-right-16 z-50 px-4 py-10">
                     <div className="ease-linear duration-300 flex gap-4 items-center"
                         style={{ transform: `translateX(-${currentSlider * (isSmallScreen ? 98 : 200)}px)` }}>
                         {/* sliders */}
                         {sliders.map((slide, inx) => (
                             <img key={inx} src={slide.img}
-                                className={`h-[180px] sm:h-[200px] lg:h-[320px] min-w-[90px] lg:min-w-[184px] ${currentSlider - 1 === inx ? 'scale-0' : 'scale-100 delay-500'
+                                className={`h-[180px] sm:h-[200px] lg:h-[320px] min-w-[90px] lg:min-w-[270px] ${currentSlider - 1 === inx ? 'scale-0' : 'scale-100 delay-500'
                                     } drop-shadow-lg shadow-lg shadow-black bg-black/50 duration-300 rounded-lg z-50`}
                                 alt={slide.title} />
                         ))}
