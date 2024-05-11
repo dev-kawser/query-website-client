@@ -8,6 +8,7 @@ import ProtectedRoute from "./ProtectedRoute";
 import AddQueries from "../Pages/AddQueries/AddQueries";
 import AllQueries from "../Pages/AllQueries/AllQueries";
 import MyQueries from "../Pages/MyQueries/MyQueries";
+import QueryDetails from "../Pages/QueryDetails/QueryDetails";
 
 
 const router = createBrowserRouter([
@@ -43,6 +44,13 @@ const router = createBrowserRouter([
             {
                 path: "/all-queries",
                 element: <AllQueries></AllQueries>
+            },
+            {
+                path: "/query/:id",
+                element: <ProtectedRoute>
+                    <QueryDetails></QueryDetails>
+                </ProtectedRoute>,
+                loader: ({ params }) => fetch(`http://localhost:5000/recent-queries/${params.id}`)
             },
         ]
     },

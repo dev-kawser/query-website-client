@@ -1,6 +1,6 @@
 /* eslint-disable react/prop-types */
 
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import Swal from "sweetalert2";
 
 
@@ -66,6 +66,9 @@ const MyQueriesCard = ({ data, myQueries, setMyQueries }) => {
                     {/* <Link to={`/updateArt/${_id}`}>
                             <button type="button" className="px-8 py-3 font-semibold border rounded dark:border-gray-800 dark:text-gray-800 lg:flex hidden hover:scale-105 transition-all">Update</button>
                         </Link> */}
+                    <Link to={`/query/${_id}`}>
+                        <button>Details</button>
+                    </Link>
                     <button onClick={() => handleDelete(_id)} type="button" className="px-8 py-3 font-semibold rounded dark:bg-red-600 dark:text-gray-100 hover:scale-105 transition-all">Delete</button>
                 </div>
             </div>
