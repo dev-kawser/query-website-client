@@ -9,25 +9,30 @@ const QueryDetails = () => {
 
     return (
         <div>
-            <div className="card container mx-auto lg:card-side bg-base-100 min-h-screen shadow-xl my-10">
-                <div className="size-96 border border-emerald-400 ml-5 p-10">
+            <div className="card container mx-auto lg:card-side bg-gray-200  shadow-xl my-10">
+                <div className="size-96 m-5 p-10 shadow-xl">
                     <figure><img src={productPhoto} alt="Album" /></figure>
                 </div>
-                <div className="card-body w-full lg:w-2/3 space-y-5">
+                <div className="divider py-5 lg:divider-horizontal">S</div>
+                <div className="card-body w-full lg:w-2/3 space-y-3">
                     <div className="flex gap-10">
-                        <h2>Product Name: <span className="text-lg font-medium">{productName}</span></h2>
-                        <h2>Brand Name: <span className="text-lg font-medium">{brandName}</span></h2>
+                        <h2><span className="text-lg font-medium">Product Name: </span>{productName}</h2>
+                        <h2><span className="text-lg font-medium">Brand Name: </span>{brandName}</h2>
                     </div>
                     <h2 className="card-title">Query Title: <span className="text-red-400">{queryTitle}</span></h2>
                     <div>
                         <p><span className="text-lg font-medium">Alternation Reason:</span> {boycottDetails}</p>
-                        <p><span className="text-lg font-medium">Posted Date: </span>{date}</p>
+                        <div className="flex gap-1 mt-1 lg:gap-3 lg:flex-row flex-col">
+                            <p><span className="text-lg font-medium">Posted Date: </span>{date}</p>
+                            <p><span className="text-lg font-medium">Recommendation: </span>{userInfo.recommendationCount
+                            }</p>
+                        </div>
                     </div>
 
 
 
                     <div>
-                        <div className="lg:max-w-md p-8 sm:flex sm:space-x-6 dark:bg-gray-50 dark:text-gray-800">
+                        <div className="lg:max-w-md p-8 border border-blue-400 sm:flex sm:space-x-6 dark:bg-gray-50 dark:text-gray-800">
                             <div className="flex-shrink-0 w-full mb-6 h-44 sm:h-32 sm:w-32 sm:mb-0">
                                 <img src={userInfo.userPhoto} alt="" className="object-cover object-center w-full h-full rounded dark:bg-gray-500" />
                             </div>
@@ -47,12 +52,78 @@ const QueryDetails = () => {
                                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" aria-label="Phonenumber" className="w-4 h-4">
                                             <path fill="currentColor" d="M449.366,89.648l-.685-.428L362.088,46.559,268.625,171.176l43,57.337a88.529,88.529,0,0,1-83.115,83.114l-57.336-43L46.558,362.088l42.306,85.869.356.725.429.684a25.085,25.085,0,0,0,21.393,11.857h22.344A327.836,327.836,0,0,0,461.222,133.386V111.041A25.084,25.084,0,0,0,449.366,89.648Zm-20.144,43.738c0,163.125-132.712,295.837-295.836,295.837h-18.08L87,371.76l84.18-63.135,46.867,35.149h5.333a120.535,120.535,0,0,0,120.4-120.4v-5.333l-35.149-46.866L371.759,87l57.463,28.311Z"></path>
                                         </svg>
-                                        <span className="dark:text-gray-600">+25 381 77 983</span>
+                                        <span className="dark:text-gray-600">01709190412</span>
                                     </span>
                                 </div>
                             </div>
                         </div>
                     </div>
+
+
+                    <form className="border border-green-400 py-10">
+
+                        <h1 className="text-3xl font-bold text-center">Add Recommendation</h1>
+
+                        <div className="md:flex gap-10 px-4">
+                            <div className="form-control md:w-1/2">
+                                <label className="label">
+                                    <span className="label-text font-semibold">Recommended product Name</span>
+                                </label>
+                                <label className="input-group">
+                                    <input
+                                        type="text"
+                                        name="recommendedProductName"
+                                        className="input input-bordered w-full"
+                                    />
+                                </label>
+                            </div>
+
+                            <div className="form-control md:w-1/2">
+                                <label className="label">
+                                    <span className="label-text font-semibold">Recommended Title</span>
+                                </label>
+                                <label className="input-group">
+                                    <input
+                                        type="text"
+                                        name="recommendationTitle"
+                                        className="input input-bordered w-full"
+                                    />
+                                </label>
+                            </div>
+                        </div>
+                        <div className="md:flex gap-10 px-4">
+                            <div className="form-control md:w-1/2">
+                                <label className="label">
+                                    <span className="label-text font-semibold">Recommended Product Image</span>
+                                </label>
+                                <label className="input-group">
+                                    <input
+                                        type="text"
+                                        name="recommendationProductImage"
+                                        className="input input-bordered w-full"
+                                    />
+                                </label>
+                            </div>
+
+                            <div className="form-control md:w-1/2">
+                                <label className="label">
+                                    <span className="label-text font-semibold">Recommendation reason</span>
+                                </label>
+                                <label className="input-group">
+                                    <input
+                                        type="text"
+                                        name="recommendationReason"
+                                        className="input input-bordered w-full"
+                                    />
+                                </label>
+                            </div>
+                        </div>
+
+                        <div className="mt-5 flex justify-center items-center">
+                            <button className="btn hover:scale-105 transition-all btn-secondary font-semibold">Add Recommendation</button>
+                        </div>
+
+                    </form>
 
 
 
