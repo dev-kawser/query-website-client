@@ -1,15 +1,53 @@
+import { useContext } from "react";
 import { useLoaderData } from "react-router-dom";
+import { AuthContext } from "../../Context/ContextProvider";
+
 
 
 const QueryDetails = () => {
 
     const singleQuery = useLoaderData();
+    const { user } = useContext(AuthContext)
 
-    const { productName, brandName, queryTitle, productPhoto, boycottDetails, date, userInfo } = singleQuery;
+    const { productName, brandName, queryTitle, productPhoto, boycottDetails, date, userInfo, _id } = singleQuery;
+
+    const handleRecommendation = e => {
+        e.preventDefault();
+        const form = e.target;
+        const recommendedProductName = form.recommendedProductName.value;
+        const recommendationTitle = form.recommendationTitle.value;
+        const recommendationProductImage = form.recommendationProductImage.value;
+        const recommendationReason = form.recommendationReason.value;
+        const queryTitleForRecommend = queryTitle;
+        const queryId = _id;
+        const productNameForRecommend = productName;
+        const userName = userInfo.userName;
+        const userEmail = userInfo.userEmail;
+        const date = new Date().toISOString().split('T')[0];
+        const recommenderName = user.displayName;
+        const recommenderEmail = user.email;
+
+        const recommendationInfo = {
+            recommendedProductName: recommendedProductName,
+            recommendationTitle: recommendationTitle,
+            recommendationProductImage: recommendationProductImage,
+            recommendationReason: recommendationReason,
+            queryTitleForRecommend: queryTitleForRecommend,
+            productNameForRecommend: productNameForRecommend,
+            queryId: queryId,
+            userName: userName,
+            userEmail: userEmail,
+            date: date,
+            recommenderName: recommenderName,
+            recommenderEmail: recommenderEmail,
+        }
+
+        console.log(recommendationInfo);
+    }
 
     return (
         <div>
-            <div className="card container mx-auto lg:card-side bg-gray-200  shadow-xl my-10">
+            <div className="card container mx-auto lg:card-side border border-x-teal-100  shadow-xl my-10">
                 <div className="size-96 m-5 p-10 shadow-xl">
                     <figure><img src={productPhoto} alt="Album" /></figure>
                 </div>
@@ -60,7 +98,7 @@ const QueryDetails = () => {
                     </div>
 
 
-                    <form className="border border-green-400 py-10">
+                    <form onSubmit={handleRecommendation} className="border border-green-400 py-10">
 
                         <h1 className="text-3xl font-bold text-center">Add Recommendation</h1>
 
@@ -120,7 +158,7 @@ const QueryDetails = () => {
                         </div>
 
                         <div className="mt-5 flex justify-center items-center">
-                            <button className="btn hover:scale-105 transition-all btn-secondary font-semibold">Add Recommendation</button>
+                            <button type="submit" className="btn hover:scale-105 transition-all btn-secondary font-semibold">Add Recommendation</button>
                         </div>
 
                     </form>
