@@ -12,7 +12,7 @@ const AllQueriesCard = ({ data }) => {
         <div className="max-w-lg p-4 shadow-md border border-blue-400 rounded-lg">
             <div className="flex justify-between pb-4 border-bottom">
                 <div className="flex items-center">
-                    <p className="mb-0 font-semibold capitalize dark:text-gray-800">{productName}</p>
+                    <p className="mb-0 font-semibold capitalize">{productName}</p>
                 </div>
                 <p className="font-semibold">{brandName}</p>
             </div>
