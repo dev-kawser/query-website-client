@@ -17,6 +17,15 @@ const MyQueries = () => {
             });
     }, [user]);
 
+    if (myQueries.length == 0) {
+        return <div className="text-3xl font-bold text-center gap-5 flex-col flex justify-center items-center lg:min-h-[400px]">
+            <h2>No Data Found. Please add first</h2>
+            <Link to="/add-queries">
+                <button className="btn btn-outline btn-secondary">Add Query</button>
+            </Link>
+        </div>
+    }
+
 
 
     return (
