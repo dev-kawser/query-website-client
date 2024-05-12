@@ -11,6 +11,7 @@ import MyQueries from "../Pages/MyQueries/MyQueries";
 import QueryDetails from "../Pages/QueryDetails/QueryDetails";
 import UpdateQuery from "../Pages/UpdateQuery/UpdateQuery";
 import MyRecommendation from "../Pages/MyRecommendation/MyRecommendation";
+import RecommendationForMe from "../Pages/RecommendationForMe/RecommendationForMe";
 
 
 const router = createBrowserRouter([
@@ -44,6 +45,11 @@ const router = createBrowserRouter([
             {
                 path: "/my-recommendations",
                 element: <MyRecommendation></MyRecommendation>,
+            },
+
+            {
+                path: "/recommendation-for-me",
+                element: <RecommendationForMe></RecommendationForMe> ,
             },
 
             {
