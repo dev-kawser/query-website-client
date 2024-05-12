@@ -1,6 +1,8 @@
-import { useContext } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import { AuthContext } from "../../Context/ContextProvider";
+import { toast } from "react-toastify";
+import Comments from "./Comments";
 
 
 
@@ -8,6 +10,9 @@ const QueryDetails = () => {
 
     const singleQuery = useLoaderData();
     const { user } = useContext(AuthContext)
+
+    const [comments, setComments] = useState([])
+
 
     const { productName, brandName, queryTitle, productPhoto, boycottDetails, date, userInfo, _id } = singleQuery;
 
@@ -26,6 +31,7 @@ const QueryDetails = () => {
         const date = new Date().toISOString().split('T')[0];
         const recommenderName = user.displayName;
         const recommenderEmail = user.email;
+        const recommendationCount = userInfo.recommendationCount;
 
         const recommendationInfo = {
             recommendedProductName: recommendedProductName,
@@ -40,10 +46,37 @@ const QueryDetails = () => {
             date: date,
             recommenderName: recommenderName,
             recommenderEmail: recommenderEmail,
+            recommendationCount: recommendationCount,
         }
 
         console.log(recommendationInfo);
+
+        fetch('http://localhost:5000/add-recommendation', {
+            method: "POST",
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(recommendationInfo)
+        })
+            .then(res => res.json())
+            .then(() => {
+                form.reset()
+                toast.success("Recommend Added Successfully")
+            })
+
+
     }
+
+    useEffect(() => {
+        fetch('http://localhost:5000/all-recommendation')
+            .then(res => res.json())
+            .then(data => {
+                setComments(data)
+            })
+    }, [])
+
+    const particularComments = comments.filter(com => com.recommenderEmail === user.email)
+
 
     return (
         <div>
@@ -162,6 +195,13 @@ const QueryDetails = () => {
                         </div>
 
                     </form>
+
+                    <div>
+                        <h2 className="text-center my-5 font-bold text-3xl">Recommends is here</h2>
+                        {
+                            particularComments.map(pc => <Comments pc={pc} key={pc._id} ></Comments>)
+                        }
+                    </div>
 
 
 
