@@ -10,6 +10,7 @@ import AllQueries from "../Pages/AllQueries/AllQueries";
 import MyQueries from "../Pages/MyQueries/MyQueries";
 import QueryDetails from "../Pages/QueryDetails/QueryDetails";
 import UpdateQuery from "../Pages/UpdateQuery/UpdateQuery";
+import MyRecommendation from "../Pages/MyRecommendation/MyRecommendation";
 
 
 const router = createBrowserRouter([
@@ -38,6 +39,11 @@ const router = createBrowserRouter([
                 element: <ProtectedRoute>
                     <MyQueries></MyQueries>
                 </ProtectedRoute>,
+            },
+
+            {
+                path: "/my-recommendations",
+                element: <MyRecommendation></MyRecommendation>,
             },
 
             {
