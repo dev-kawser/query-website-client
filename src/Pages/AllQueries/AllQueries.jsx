@@ -11,7 +11,7 @@ const AllQueries = () => {
     return (
         <div className="my-10">
 
-            <h2 className="text-5xl font-bold text-center dark:text-gray-700">Queries</h2>
+            <h2 className="text-5xl font-bold text-center">Queries</h2>
 
             <div className="grid grid-cols-1 lg:grid-cols-3 p-1 container mx-auto mt-10 gap-12">
                 {
