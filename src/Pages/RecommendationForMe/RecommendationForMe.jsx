@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Context/ContextProvider";
 import Lottie from "lottie-react";
 import loadingAnimation from "../../../src/assets/loading.json"
+import TBody from "./TBody";
 
 
 
@@ -27,12 +28,37 @@ const RecommendationForMe = () => {
 
 
     const particularRecommend = recommend.filter(com => com.recommenderEmail !== user?.email)
-    console.log(particularRecommend);
 
 
     return (
         <div>
-
+            <div className="container mt-5 p-2 mx-auto sm:p-4 lg:min-h-[400px]">
+                <h2 className="mb-4 text-2xl font-bold leading-tight fira-sans">Recommendation For Me</h2>
+                <div className="overflow-x-auto">
+                    <table className="min-w-full text-xs">
+                        <colgroup>
+                            <col />
+                            <col />
+                            <col />
+                            <col />
+                            <col />
+                            <col className="w-24" />
+                        </colgroup>
+                        <thead>
+                            <tr className="text-left">
+                                <th className="p-3">Product Name</th>
+                                <th className="p-3">Recommended Product Name</th>
+                                <th className="p-3">Recommendation Title</th>
+                                <th className="p-3">Date</th>
+                                <th className="p-3">Recommender Email</th>
+                            </tr>
+                        </thead>
+                        {
+                            particularRecommend.map(rm => <TBody key={rm._id} rm={rm}></TBody> )
+                        }
+                    </table>
+                </div>
+            </div>
         </div>
     );
 };

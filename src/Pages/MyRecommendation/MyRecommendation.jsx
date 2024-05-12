@@ -31,7 +31,7 @@ const MyRecommendation = () => {
                             <col />
                             <col className="w-24" />
                         </colgroup>
-                        <thead className="dark:bg-gray-300">
+                        <thead>
                             <tr className="text-left">
                                 <th className="p-3">Product Name</th>
                                 <th className="p-3">Recommended Product Name</th>

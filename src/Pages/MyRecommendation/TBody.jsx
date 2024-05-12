@@ -40,7 +40,7 @@ const TBody = ({ mr, setMyRecommendation, MyRecommendation }) => {
 
     return (
         <tbody>
-            <tr className="border-b border-opacity-20 dark:border-gray-300 dark:bg-gray-50">
+            <tr className="border-b border-opacity-20 dark:border-gray-300">
                 <td className="p-3">
                     <p>{mr?.productNameForRecommend}</p>
                 </td>
@@ -51,10 +51,10 @@ const TBody = ({ mr, setMyRecommendation, MyRecommendation }) => {
                     <p>{mr?.recommendationTitle}</p>
                 </td>
                 <td className="p-3">
-                    <p className="dark:text-gray-600">{mr?.date}</p>
+                    <p>{mr?.date}</p>
                 </td>
                 <td className="p-3">
-                    <p className="dark:text-gray-600">{mr?.recommenderEmail}</p>
+                    <p>{mr?.recommenderEmail}</p>
                 </td>
                 <td className="p-3 text-right">
                     <span className="px-3 py-1 font-semibold rounded-md dark:bg-violet-600 dark:text-gray-50">
