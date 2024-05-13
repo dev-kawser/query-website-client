@@ -4,7 +4,8 @@ Live URL: [Smart Tech Spot](https://smart-tech-project.web.app/)
 
 ---
 
-## Assignment Category: assignment_category_0009 - Smart Phone Query
+## Assignment Category: assignment_category_0009
+## Assignment Type: Smart Phone Query
 
 ---
 
