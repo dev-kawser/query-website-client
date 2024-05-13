@@ -69,7 +69,7 @@ const Login = () => {
 
     return (
         <div>
-            <div className="flex h-screen items-center justify-center bg-[#8EA7E9]/20 p-6 md:p-0">
+            <div className="flex h-screen items-center justify-center  p-6 md:p-0">
                 <div className="flex h-full w-full overflow-hidden rounded-xl shadow-md  md:h-[90%] md:w-[80%] lg:h-[80%]">
                     {/* register design side  */}
                     <div className="relative hidden h-full items-center justify-center bg-[#8EA7E9] md:flex md:w-[60%] lg:w-[40%]">
@@ -83,7 +83,7 @@ const Login = () => {
                         </div>
                     </div>
                     {/* input side  */}
-                    <div className="flex w-full flex-col justify-center bg-white py-10 lg:w-[60%]">
+                    <div className="flex w-full flex-col justify-center py-10 lg:w-[60%]">
                         <h2 className="pb-8 text-center text-3xl font-bold text-[#8EA7E9]">Login Here</h2>
                         <form onSubmit={handleSubmit(onSubmit)} className="flex  w-full flex-col items-center justify-center gap-4">
                             <input className="w-[80%] rounded-lg border border-[#8EA7E9] px-6 py-2 focus:outline-none focus:ring-2 focus:ring-[#8EA7E9]/50 md:w-[60%]" type="email" placeholder="Email" name="email" {...register("email", { required: true })} />
