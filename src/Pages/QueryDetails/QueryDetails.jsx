@@ -81,24 +81,26 @@ const QueryDetails = () => {
     return (
         <div>
             <div className="card container mx-auto lg:card-side border border-x-teal-100  shadow-xl my-10">
-                <div className="size-96 m-5 p-10 shadow-xl">
+                <div className="lg:size-96 size-72 mx-auto lg:m-5 p-10 shadow-xl">
                     <figure><img src={productPhoto} alt="Album" /></figure>
                 </div>
                 <div className="divider py-5 lg:divider-horizontal">S</div>
                 <div className="card-body w-full lg:w-2/3 space-y-3">
-                    <div className="flex gap-10">
-                        <h2><span className="text-lg font-medium">Product Name: </span>{productName}</h2>
-                        <h2><span className="text-lg font-medium">Brand Name: </span>{brandName}</h2>
+                    <div className="flex gap-1 lg:flex-row flex-col lg:gap-10">
+                        <h2><span className="text-lg font-medium text-red-900">Product Name: </span><span className="text-blue-400 font-bold overpass">{productName}</span></h2>
+                        <h2><span className="text-lg font-medium text-red-900">Brand Name: </span><span className="text-blue-400 font-bold overpass">{brandName}</span></h2>
                     </div>
-                    <h2 className="card-title">Query Title: <span className="text-red-400">{queryTitle}</span></h2>
+
                     <div>
-                        <p><span className="text-lg font-medium">Alternation Reason:</span> {boycottDetails}</p>
                         <div className="flex gap-1 mt-1 lg:gap-3 lg:flex-row flex-col">
-                            <p><span className="text-lg font-medium">Posted Date: </span>{date}</p>
-                            <p><span className="text-lg font-medium">Recommendation: </span>{userInfo.recommendationCount
-                            }</p>
+                            <p><span className="text-lg font-medium text-red-900">Posted Date: </span><span className="text-blue-400 overpass">{date}</span></p>
+                            <p><span className="text-lg font-medium text-red-900">Recommendation: </span><span className="text-blue-400 overpass">{userInfo.recommendationCount
+                            }</span></p>
                         </div>
                     </div>
+                    <p><span className="text-lg font-medium overpass text-red-900">Alternation Reason:</span> <span className="text-blue-400 workSans">{boycottDetails}</span></p>
+                    <h2 className="card-title text-red-900">Query Title: <span className="text-blue-400 overpass">{queryTitle}</span></h2>
+
 
 
 

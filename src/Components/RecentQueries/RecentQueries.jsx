@@ -18,11 +18,11 @@ const RecentQueries = () => {
 
     return (
         <div className="my-20">
-            <h2 className="text-5xl font-bold text-center">Recent Queries</h2>
+            <h2 className="text-5xl font-bold text-center overpass">Recent <span className="text-blue-400">Queries</span> Here</h2>
 
             <div className="grid grid-cols-1 lg:grid-cols-3 p-1 container mx-auto mt-10 gap-12">
                 {
-                    slicedRecentQueries.map((data) => <RecentQueriesCard data={data} key={data._id} ></RecentQueriesCard> )
+                    slicedRecentQueries.map((data) => <RecentQueriesCard data={data} key={data._id} ></RecentQueriesCard>)
                 }
             </div>
         </div>

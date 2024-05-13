@@ -25,23 +25,23 @@ const Navbar = () => {
     const links =
         <>
             <li className="group flex  cursor-pointer flex-col">
-                <NavLink className={({ isActive }) => isActive ? 'text-sky-500 font-semibold ' : 'font-semibold hover:scale-105'} to='/' > Home</NavLink> <span className="hidden lg:block mt-[2px] h-[3px] w-[0px] rounded-full bg-sky-500 transition-all duration-300 group-hover:w-full"></span>
+                <NavLink className={({ isActive }) => isActive ? 'text-sky-500 font-bold ' : 'font-semibold hover:scale-105'} to='/' > Home</NavLink> <span className="hidden lg:block mt-[2px] h-[3px] w-[0px] rounded-full bg-sky-500 transition-all duration-300 group-hover:w-full"></span>
             </li>
             <li className="group flex  cursor-pointer flex-col">
-                <NavLink className={({ isActive }) => isActive ? 'text-sky-500 font-semibold ' : 'font-semibold hover:scale-105'} to='/all-queries' > Queries</NavLink> <span className="hidden lg:block mt-[2px] h-[3px] w-[0px] rounded-full bg-sky-500 transition-all duration-300 group-hover:w-full"></span>
+                <NavLink className={({ isActive }) => isActive ? 'text-sky-500 font-bold ' : 'font-semibold hover:scale-105'} to='/all-queries' > Queries</NavLink> <span className="hidden lg:block mt-[2px] h-[3px] w-[0px] rounded-full bg-sky-500 transition-all duration-300 group-hover:w-full"></span>
             </li>
             <li className="group flex  cursor-pointer flex-col">
-                <NavLink className={({ isActive }) => isActive ? 'text-sky-500 font-semibold ' : 'font-semibold hover:scale-105'} to='/my-queries' > My Queries </NavLink> <span className="hidden lg:block mt-[2px] h-[3px] w-[0px] rounded-full bg-sky-500 transition-all duration-300 group-hover:w-full"></span>
+                <NavLink className={({ isActive }) => isActive ? 'text-sky-500 font-bold ' : 'font-semibold hover:scale-105'} to='/my-queries' > My Queries </NavLink> <span className="hidden lg:block mt-[2px] h-[3px] w-[0px] rounded-full bg-sky-500 transition-all duration-300 group-hover:w-full"></span>
             </li>
             {
                 user ?
                     <>
                         <li className="group flex  cursor-pointer flex-col">
-                            <NavLink className={({ isActive }) => isActive ? 'text-sky-500 font-semibold ' : 'font-semibold hover:scale-105'} to='/recommendation-for-me' > Recommendations For Me
+                            <NavLink className={({ isActive }) => isActive ? 'text-sky-500 font-bold ' : 'font-semibold hover:scale-105'} to='/recommendation-for-me' > Recommendations For Me
                             </NavLink> <span className="hidden lg:block mt-[2px] h-[3px] w-[0px] rounded-full bg-sky-500 transition-all duration-300 group-hover:w-full"></span>
                         </li>
                         <li className="group flex  cursor-pointer flex-col">
-                            <NavLink className={({ isActive }) => isActive ? 'text-sky-500 font-semibold ' : 'font-semibold hover:scale-105'} to='/my-recommendations' > My recommendations
+                            <NavLink className={({ isActive }) => isActive ? 'text-sky-500 font-bold ' : 'font-semibold hover:scale-105'} to='/my-recommendations' > My recommendations
                             </NavLink> <span className="hidden lg:block mt-[2px] h-[3px] w-[0px] rounded-full bg-sky-500 transition-all duration-300 group-hover:w-full"></span>
                         </li>
                     </>
@@ -83,11 +83,11 @@ const Navbar = () => {
                     </div>
                     <div className="flex gap-2 items-center justify-center">
                         <img className="size-10 lg:flex hidden lg:size-12 lg:rounded-full" src="https://i.ibb.co/ykcZXtz/sara-kurfess-6lc-T2k-RPvn-I-unsplash.jpg" alt="" />
-                        <Link to="/" className="lg:text-2xl text-base font-bold">Smart Tech Spot</Link>
+                        <Link to="/" className="lg:text-2xl text-base font-bold">Smart <span className="text-blue-400">Tech</span> Spot</Link>
                     </div>
                 </div>
                 <div className="navbar-center hidden lg:flex">
-                    <ul className="flex items-center justify-between gap-7 font-medium text-lg">
+                    <ul className="flex items-center overpass justify-between gap-7 font-medium text-lg">
                         {
                             links
                         }

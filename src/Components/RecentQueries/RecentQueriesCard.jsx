@@ -9,9 +9,9 @@ const RecentQueriesCard = ({ data }) => {
         <div className="max-w-lg p-4 shadow-md border border-blue-400 rounded-lg">
             <div className="flex justify-between pb-4 border-bottom">
                 <div className="flex items-center">
-                    <p className="mb-0 font-semibold capitalize">{productName}</p>
+                    <p className="mb-0 font-semibold capitalize overpass">{productName}</p>
                 </div>
-                <p className="font-semibold">{brandName}</p>
+                <p className="font-semibold overpass">{brandName}</p>
             </div>
             <div className="space-y-7">
                 <div className="space-y-2">
@@ -22,13 +22,13 @@ const RecentQueriesCard = ({ data }) => {
                 </div>
                 <div className="space-y-2">
                     <a rel="noopener noreferrer" href="#" className="block">
-                        <h3 className="text-xl font-semibold dark:text-violet-600">{queryTitle}</h3>
+                        <h3 className="text-xl font-semibold dark:text-blue-400 overpass">{queryTitle}</h3>
                     </a>
-                    <p className="leading-snug dark:text-gray-600">{boycottDetails}</p>
+                    <p className="leading-snug dark:text-gray-600 workSans">{boycottDetails}</p>
                 </div>
                 <div className="flex justify-between items-center">
                     <img className="size-12 rounded-full" src={userInfo.userPhoto} alt="" />
-                    <p className="font-semibold">{userInfo.userName}</p>
+                    <p className="font-semibold overpass">{userInfo.userName}</p>
                 </div>
             </div>
         </div>

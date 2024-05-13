@@ -57,7 +57,7 @@ const TBody = ({ mr, setMyRecommendation, MyRecommendation }) => {
                     <p>{mr?.recommenderEmail}</p>
                 </td>
                 <td className="p-3 text-right">
-                    <span className="px-3 py-1 font-semibold rounded-md dark:bg-violet-600 dark:text-gray-50">
+                    <span className="px-3 py-1 font-semibold rounded-md dark:bg-red-700 dark:text-gray-50">
                         <span>
                             <button onClick={() => handleDelete(_id)}>Delete</button>
                         </span>
