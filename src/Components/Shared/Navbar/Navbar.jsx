@@ -1,4 +1,4 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../../Context/ContextProvider";
 
@@ -49,6 +49,22 @@ const Navbar = () => {
                     : ""
             }
         </>
+
+    const [open, setOpen] = useState(false);
+    const dropDownRef = useRef(null);
+    const items = ['Profile', 'Dashboard', 'Settings', 'Log Out'];
+
+    useEffect(() => {
+        const close = (e) => {
+            if (dropDownRef.current && !dropDownRef.current.contains(e.target)) {
+                setOpen(false)
+            }
+        };
+        document.addEventListener('mousedown', close);
+        return () => {
+            document.removeEventListener('mousedown', close)
+        }
+    }, []);
 
 
     return (
@@ -117,14 +133,40 @@ const Navbar = () => {
                         </svg>
                     </label>
 
+
+
+
+
+
+
+
+
+
+
                     {
                         user ?
-                            <button onClick={() => LogOut()} className="group relative rounded z-10 h-12 w-28 overflow-hidden bg-black text-xl font-semibold text-white"><span className="absolute -inset-8 origin-left rotate-12 scale-x-0 transform bg-white transition-transform duration-700 group-hover:scale-x-100 group-hover:duration-300"></span><span className="absolute -inset-8 origin-left rotate-12 scale-x-0 transform bg-sky-700 transition-transform duration-500 group-hover:scale-x-100 group-hover:duration-700"></span><span className="absolute -inset-8 origin-left rotate-12 scale-x-0 transform bg-sky-900 transition-transform duration-300 group-hover:scale-x-50 group-hover:duration-500"></span><span className="absolute z-10 text-center text-white opacity-0 duration-100 ease-out group-hover:opacity-100 group-hover:duration-700">Click</span>Logout</button>
+
+                            <div ref={dropDownRef} className="relative mx-2 w-fit text-black">
+                                <button onClick={() => setOpen((prev) => !prev)}>
+                                    <img width={40} height={40} className="size-12 rounded-full bg-slate-500 object-cover duration-500 hover:scale-x-[98%] hover:opacity-80" src={user?.photoURL} alt="avatar drop down navigate ui" />
+                                </button>
+                                <ul className={`${open ? 'visible duration-300' : 'invisible'} absolute right-0 top-12 z-50 w-fit rounded-sm bg-slate-200 shadow-md`}>
+                                    {items.map((item, idx) => (
+                                        <li key={idx}
+                                            className={`rounded-sm px-6 py-2 ${open ? 'opacity-100 duration-300' : 'opacity-0'}  ${item === 'Log Out' ? 'text-red-500 hover:bg-red-600 hover:text-white' : 'hover:bg-slate-300'}`}
+                                            onClick={item === 'Log Out' ? LogOut : null}
+                                        >
+                                            {item}
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
 
                             :
+
                             <Link to="/login">
 
-                                <button className="group relative rounded z-10 h-12 w-28 overflow-hidden bg-black text-xl font-semibold text-white"><span className="absolute -inset-8 origin-left rotate-12 scale-x-0 transform bg-white transition-transform duration-700 group-hover:scale-x-100 group-hover:duration-300"></span><span className="absolute -inset-8 origin-left rotate-12 scale-x-0 transform bg-sky-700 transition-transform duration-500 group-hover:scale-x-100 group-hover:duration-700"></span><span className="absolute -inset-8 origin-left rotate-12 scale-x-0 transform bg-sky-900 transition-transform duration-300 group-hover:scale-x-50 group-hover:duration-500"></span><span className="absolute z-10 text-center text-white opacity-0 duration-100 ease-out group-hover:opacity-100 group-hover:duration-700">Click</span>Login</button>
+                                <button className="group relative rounded z-10 h-12 w-24 overflow-hidden bg-black text-xl font-semibold text-white"><span className="absolute -inset-8 origin-left rotate-12 scale-x-0 transform bg-white transition-transform duration-700 group-hover:scale-x-100 group-hover:duration-300"></span><span className="absolute -inset-8 origin-left rotate-12 scale-x-0 transform bg-sky-700 transition-transform duration-500 group-hover:scale-x-100 group-hover:duration-700"></span><span className="absolute -inset-8 origin-left rotate-12 scale-x-0 transform bg-sky-900 transition-transform duration-300 group-hover:scale-x-50 group-hover:duration-500"></span><span className="absolute z-10 text-center text-white opacity-0 duration-100 ease-out group-hover:opacity-100 group-hover:duration-700">Click</span>Login</button>
 
                             </Link>
                     }
