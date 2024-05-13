@@ -1,6 +1,7 @@
 import { useLoaderData } from "react-router-dom";
 import AllQueriesCard from "./AllQueriesCard";
 import { useState } from "react";
+import { Helmet } from "react-helmet";
 
 const AllQueries = () => {
     const allQueries = useLoaderData();
@@ -25,6 +26,11 @@ const AllQueries = () => {
 
     return (
         <div className="my-10 container mx-auto">
+
+            <Helmet>
+                <title>Smart Tech Spot | Queries</title>
+            </Helmet>
+
             <h2 className="text-5xl overpass text-blue-400 font-bold text-center">Queries</h2>
 
             <div className="flex flex-col lg:flex-row gap-2 justify-between mx-2 mt-5">

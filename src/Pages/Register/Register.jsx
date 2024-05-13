@@ -5,6 +5,7 @@ import { toast } from "react-toastify";
 import { AuthContext } from "../../Context/ContextProvider";
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa";
 import { updateProfile } from "firebase/auth";
+import { Helmet } from "react-helmet";
 
 
 const Register = () => {
@@ -82,6 +83,9 @@ const Register = () => {
 
     return (
         <div className="my-10 container mx-auto">
+            <Helmet>
+                <title>Smart Tech Spot | Register</title>
+            </Helmet>
             <div className="flex h-screen">
 
                 <div className="hidden lg:flex items-center justify-center flex-1 bg-white text-black">

@@ -3,6 +3,7 @@ import { useLoaderData } from "react-router-dom";
 import { AuthContext } from "../../Context/ContextProvider";
 import { toast } from "react-toastify";
 import Comments from "./Comments";
+import { Helmet } from "react-helmet";
 
 
 
@@ -80,6 +81,9 @@ const QueryDetails = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>Query Details | {productName}</title>
+            </Helmet>
             <div className="card container mx-auto lg:card-side border border-x-teal-100  shadow-xl my-10">
                 <div className="lg:size-96 size-72 mx-auto lg:m-5 p-10 shadow-xl">
                     <figure><img src={productPhoto} alt="Album" /></figure>

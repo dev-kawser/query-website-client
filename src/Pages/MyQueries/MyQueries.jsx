@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../Context/ContextProvider";
 import MyQueriesCard from "./MyQueriesCard";
+import { Helmet } from "react-helmet";
 
 
 const MyQueries = () => {
@@ -30,6 +31,11 @@ const MyQueries = () => {
 
     return (
         <div>
+
+            <Helmet>
+                <title>Smart Tech Spot | My Queries</title>
+            </Helmet>
+
             <div>
                 <div>
                     <div className="w-full bg-center bg-cover bg-no-repeat bg-[url('https://i.ibb.co/y59xWmf/gilles-lambert-pb-l-F8-VWa-PU-unsplash.jpg')] container mx-auto my-10 dark:bg-gray-500">

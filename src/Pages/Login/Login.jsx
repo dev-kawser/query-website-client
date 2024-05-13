@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import { AuthContext } from "../../Context/ContextProvider";
+import { Helmet } from "react-helmet";
 
 
 const Login = () => {
@@ -69,6 +70,9 @@ const Login = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>Smart Tech Spot | Login</title>
+            </Helmet>
             <div className="flex h-screen items-center justify-center  p-6 md:p-0">
                 <div className="flex h-full w-full overflow-hidden rounded-xl shadow-md  md:h-[90%] md:w-[80%] lg:h-[80%]">
                     {/* register design side  */}
