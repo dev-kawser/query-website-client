@@ -27,7 +27,7 @@ const AllQueries = () => {
         <div className="my-10 container mx-auto">
             <h2 className="text-5xl overpass text-blue-400 font-bold text-center">Queries</h2>
 
-            <div className="flex justify-between mx-2 mt-5">
+            <div className="flex flex-col lg:flex-row gap-2 justify-between mx-2 mt-5">
                 <input
                     type="text"
                     placeholder="Search by product name..."
