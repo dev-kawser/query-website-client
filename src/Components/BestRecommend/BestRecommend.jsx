@@ -2,7 +2,7 @@
 
 const BestRecommend = () => {
     return (
-        <div className="my-20 container mx-auto px-2">
+        <div className="lg:my-20 my-10 container mx-auto px-2">
 
             <h2 className="text-5xl font-bold text-center overpass">Top <span className="text-blue-400">Recommend</span> Phones</h2>
 

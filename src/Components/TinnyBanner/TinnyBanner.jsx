@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const TinnyBanner = () => {
     return (
         <div>
-            <div className="w-full bg-center bg-cover bg-no-repeat bg-[url('https://i.ibb.co/y59xWmf/gilles-lambert-pb-l-F8-VWa-PU-unsplash.jpg')] container mx-auto mt-20">
+            <div className="w-full bg-center bg-cover bg-no-repeat bg-[url('https://i.ibb.co/y59xWmf/gilles-lambert-pb-l-F8-VWa-PU-unsplash.jpg')] container mx-auto mt-10 lg:mt-20">
                 <div className="container flex flex-col flex-wrap content-center justify-center p-4 py-6 lg:py-20 max-w-4xl mx-auto md:p-10">
                     <h1 className="lg:text-5xl text-3xl antialiased font-semibold leading-none text-center text-gray-300 overpass">Unlock the Power of Knowledge! Explore All Queries Here.</h1>
                     <p className="pt-2 pb-8 text-xs lg:text-base antialiased text-center text-gray-300 workSans">Discover the answers to all your burning questions at Smart Tech Spot! From troubleshooting tech issues to exploring the latest innovations, our comprehensive query page has got you covered. Dive in and unlock a world of knowledge today!</p>

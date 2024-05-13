@@ -25,7 +25,7 @@ const MyRecommendation = () => {
                 <title>Smart Tech Spot | My Recommendation</title>
             </Helmet>
 
-            <div className="container mt-5 p-2 mx-auto sm:p-4 lg:min-h-[400px]">
+            <div className="container my-5 p-2 mx-auto sm:p-4 lg:min-h-[400px]">
                 <h2 className="mb-4 text-2xl font-bold leading-tight text-blue-400 overpass">Recommendation By Me</h2>
                 <div className="overflow-x-auto">
                     <table className="min-w-full text-xs">
