@@ -10,7 +10,7 @@ const MyQueries = () => {
     const [myQueries, setMyQueries] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/myQueries/${user?.email}`)
+        fetch(`https://smart-tech-spot-server.vercel.app/myQueries/${user?.email}`)
             .then(res => res.json())
             .then(data => {
                 setMyQueries(data);

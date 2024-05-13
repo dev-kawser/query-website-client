@@ -62,7 +62,7 @@ const router = createBrowserRouter([
             {
                 path: "/all-queries",
                 element: <AllQueries></AllQueries>,
-                loader: () => fetch('http://localhost:5000/recent-queries')
+                loader: () => fetch('https://smart-tech-spot-server.vercel.app/recent-queries')
             },
 
             {
@@ -70,7 +70,7 @@ const router = createBrowserRouter([
                 element: <ProtectedRoute>
                     <QueryDetails></QueryDetails>
                 </ProtectedRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/recent-queries/${params.id}`)
+                loader: ({ params }) => fetch(`https://smart-tech-spot-server.vercel.app/recent-queries/${params.id}`)
             },
 
             {
@@ -78,7 +78,7 @@ const router = createBrowserRouter([
                 element: <ProtectedRoute>
                     <UpdateQuery></UpdateQuery>
                 </ProtectedRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/recent-queries/${params.id}`)
+                loader: ({ params }) => fetch(`https://smart-tech-spot-server.vercel.app/recent-queries/${params.id}`)
             },
         ]
     },

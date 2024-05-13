@@ -51,7 +51,7 @@ const QueryDetails = () => {
 
         console.log(recommendationInfo);
 
-        fetch('http://localhost:5000/add-recommendation', {
+        fetch('https://smart-tech-spot-server.vercel.app/add-recommendation', {
             method: "POST",
             headers: {
                 'content-type': 'application/json'
@@ -68,7 +68,7 @@ const QueryDetails = () => {
     }
 
     useEffect(() => {
-        fetch('http://localhost:5000/all-recommendation')
+        fetch('https://smart-tech-spot-server.vercel.app/all-recommendation')
             .then(res => res.json())
             .then(data => {
                 setComments(data)

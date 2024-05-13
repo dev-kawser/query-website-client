@@ -39,7 +39,7 @@ const AddQueries = () => {
 
 
         // data added to server
-        fetch('http://localhost:5000/add-query', {
+        fetch('https://smart-tech-spot-server.vercel.app/add-query', {
             method: "POST",
             headers: {
                 'content-type': 'application/json'

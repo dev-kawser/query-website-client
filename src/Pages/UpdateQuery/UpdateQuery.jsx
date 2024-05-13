@@ -30,7 +30,7 @@ const UpdateQuery = () => {
             date: date,
         }
 
-        fetch(`http://localhost:5000/recent-queries/${_id}`, {
+        fetch(`https://smart-tech-spot-server.vercel.app/recent-queries/${_id}`, {
             method: "PUT",
             headers: {
                 'content-type': 'application/json'

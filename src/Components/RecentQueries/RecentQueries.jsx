@@ -9,7 +9,7 @@ const RecentQueries = () => {
     const slicedRecentQueries = recentQueries.slice(0, 6);
 
     useEffect(() => {
-        fetch('http://localhost:5000/recent-queries')
+        fetch('https://smart-tech-spot-server.vercel.app/recent-queries')
             .then(res => res.json())
             .then(data => {
                 setRecentQueries(data)

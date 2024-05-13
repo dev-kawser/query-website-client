@@ -19,7 +19,7 @@ const TBody = ({ mr, setMyRecommendation, MyRecommendation }) => {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/myRecommendation/${id}`, {
+                fetch(`https://smart-tech-spot-server.vercel.app/myRecommendation/${id}`, {
                     method: "DELETE"
                 })
                     .then(res => res.json())

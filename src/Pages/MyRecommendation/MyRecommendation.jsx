@@ -10,7 +10,7 @@ const MyRecommendation = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/myRecommendation/${user?.email}`)
+        fetch(`https://smart-tech-spot-server.vercel.app/myRecommendation/${user?.email}`)
             .then(res => res.json())
             .then(data => {
                 setMyRecommendation(data);

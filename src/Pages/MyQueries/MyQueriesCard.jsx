@@ -21,7 +21,7 @@ const MyQueriesCard = ({ data, myQueries, setMyQueries }) => {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/myQueries/${id}`, {
+                fetch(`https://smart-tech-spot-server.vercel.app/myQueries/${id}`, {
                     method: "DELETE"
                 })
                     .then(res => res.json())

@@ -13,7 +13,7 @@ const RecommendationForMe = () => {
     const { user } = useContext(AuthContext)
 
     useEffect(() => {
-        fetch('http://localhost:5000/all-recommendation')
+        fetch('https://smart-tech-spot-server.vercel.app/all-recommendation')
             .then(res => res.json())
             .then(data => {
                 setRecommend(data)
