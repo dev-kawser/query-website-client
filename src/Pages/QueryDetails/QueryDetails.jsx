@@ -75,7 +75,7 @@ const QueryDetails = () => {
             })
     }, [])
 
-    const particularComments = comments.filter(com => com.recommenderEmail === user.email)
+    const particularComments = comments.filter(com => com.queryId === _id)
 
 
     return (
