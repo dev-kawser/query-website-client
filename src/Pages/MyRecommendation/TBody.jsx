@@ -27,7 +27,7 @@ const TBody = ({ mr, setMyRecommendation, MyRecommendation }) => {
                         if (data.deletedCount > 0) {
                             Swal.fire({
                                 title: "Deleted!",
-                                text: "Your Query has been deleted.",
+                                text: "Your Recommend has been deleted.",
                                 icon: "success"
                             });
                             const remaining = MyRecommendation.filter(mr => mr._id !== _id);

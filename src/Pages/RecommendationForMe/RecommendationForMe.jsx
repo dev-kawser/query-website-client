@@ -27,8 +27,8 @@ const RecommendationForMe = () => {
         </div>
     }
 
-
-    const particularRecommend = recommend.filter(com => com.recommenderEmail !== user?.email)
+    
+    const particularRecommend = recommend.filter(com => com.recommenderEmail !== com.userEmail)
 
 
     return (

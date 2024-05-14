@@ -50,7 +50,6 @@ const QueryDetails = () => {
             recommendationCount: recommendationCount,
         }
 
-        console.log(recommendationInfo);
 
         fetch('https://smart-tech-spot-server.vercel.app/add-recommendation', {
             method: "POST",
