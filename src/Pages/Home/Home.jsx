@@ -5,6 +5,7 @@ import Slider from "../../Components/Slider/Slider";
 
 import TinnyBanner from "../../Components/TinnyBanner/TinnyBanner";
 import TipsSection from "../../Components/TipsSection/TipsSection";
+import FeedBack from "../../Components/Feadback/FeedBack";
 
 
 const Home = () => {
@@ -19,6 +20,7 @@ const Home = () => {
             <RecentQueries></RecentQueries>
             <BestRecommend></BestRecommend>
             <TipsSection></TipsSection>
+            <FeedBack></FeedBack>
         </div>
     );
 };

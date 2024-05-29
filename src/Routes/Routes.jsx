@@ -12,6 +12,7 @@ import QueryDetails from "../Pages/QueryDetails/QueryDetails";
 import UpdateQuery from "../Pages/UpdateQuery/UpdateQuery";
 import MyRecommendation from "../Pages/MyRecommendation/MyRecommendation";
 import RecommendationForMe from "../Pages/RecommendationForMe/RecommendationForMe";
+import AllReview from "../Pages/AllReview/AllReview";
 
 
 const router = createBrowserRouter([
@@ -50,6 +51,11 @@ const router = createBrowserRouter([
             {
                 path: "/recommendation-for-me",
                 element: <RecommendationForMe></RecommendationForMe> ,
+            },
+
+            {
+                path: "/allReview",
+                element: <AllReview></AllReview> ,
             },
 
             {
